@@ -30,7 +30,7 @@ anova_stat <- function(data, t.name=NULL, var.name=NULL){
     stat=aov(temp$value~temp[,which(colnames(data)==t.name)])
 
     a=as.data.frame(matrix(unlist(summary(stat)),nrow=1))
-    new_d=data.frame(variable=var[i,],F.value=a[,7],P.value=a[,9])
+    new_d=data.frame(variable=var[i,],F.value=a[,7],p=a[,9])
     d=rbind.data.frame(d,new_d)
   }
   return(d)
