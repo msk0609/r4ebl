@@ -14,8 +14,6 @@
 #
 #'@export
 ctr.tt <- function(data=data, g.name=NULL,var.name=NULL, ctr.name=NULL){
-
-
   if (!requireNamespace("tidyverse", quietly = TRUE)) {
     stop("You need to install package tidyverse to use this function")
   }
@@ -29,7 +27,6 @@ ctr.tt <- function(data=data, g.name=NULL,var.name=NULL, ctr.name=NULL){
   for (i in 1:nrow(var)) {
     temp=subset(data,data[,which(colnames(data)==var.name)]==var[i,])
     ctemp=filter(temp, temp[,which(colnames(data)==g.name )] %in% ctr.name)
-    head(ctemp2)
     for (j in 1:nrow(grp)) {
       ttemp=subset(temp,temp[,which(colnames(data)==g.name)]==grp[j,])
       tt=t.test(ctemp$value, ttemp$value, var.equal = T)
