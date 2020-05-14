@@ -28,7 +28,7 @@ ctr.tt <- function(data=data, g.name=NULL,var.name=NULL, ctr.name=NULL){
   d=data.frame()
   for (i in 1:nrow(var)) {
     temp=subset(data,data[,which(colnames(data)==var.name)]==var[i,])
-    ctemp2=filter(temp, temp[,which(colnames(data)==g.name )] %in% ctr.name)
+    ctemp=filter(temp, temp[,which(colnames(data)==g.name )] %in% ctr.name)
     head(ctemp2)
     for (j in 1:nrow(grp)) {
       ttemp=subset(temp,temp[,which(colnames(data)==g.name)]==grp[j,])
