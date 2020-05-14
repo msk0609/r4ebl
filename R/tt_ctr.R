@@ -6,7 +6,12 @@
 #'@param ctr.name: control sp in group
 #'@return statiscal comparison of raman intensity distributionby raman shift
 #'@examples
-#'examples not included
+#'ft=ctr.tt(data = ex_rm,g.name ="Sp",var.name = "variable", ctr.name = "a0")
+#'head(ft)
+#'
+#'ggplot(ft, aes(x=variable, y=p,group=Comp.sp))+
+#'geom_line()+
+#'facet_wrap(.~Comp.sp, ncol = 1)
 #
 #'@export
 ctr.tt <- function(data=data, g.name,var.name, ctr.name="a0"){
