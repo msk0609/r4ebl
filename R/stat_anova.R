@@ -8,12 +8,14 @@
 #'ex=anova_stat(mt,t.name = "Treatment", var.name = "variable")
 #'
 #'ggplot(ex)+
-#'geom_line(aes(x=Var, y=F.value),col="royalblue")+
-#'geom_line(aes(x=Var, y=P.value*10), col="red")+
+#'geom_line(aes(x=variable, y=F.value),col="red")+
+#'geom_line(aes(x=variable, y=P.value*10), col="royalblue")+
 #'theme_bw()
 #
 #'@export
 anova_stat <- function(data, t.name=NULL, var.name=NULL){
+  print("this fuction must load package:dplyr  ")
+
   if (!requireNamespace("tidyverse", quietly = TRUE)) {
     stop("You need to install package tidyverse to use this function")
   }

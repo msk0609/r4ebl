@@ -21,7 +21,7 @@ Compare intensity distribution by treatment using anova according to variable
 ex=anova_stat(mt,t.name = "Treatment", var.name = "variable")
 
 ggplot(ex)+
-geom_line(aes(x=Var, y=F.value),col="royalblue")+
-geom_line(aes(x=Var, y=P.value*10), col="red")+
+geom_line(aes(x=variable, y=F.value),col="red")+
+geom_line(aes(x=variable, y=P.value*10), col="royalblue")+
 theme_bw()
 }
