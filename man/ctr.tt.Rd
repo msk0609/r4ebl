@@ -20,5 +20,10 @@ statiscal comparison of raman intensity distributionby raman shift
 Compare intensity between sample and control according to raman shift
 }
 \examples{
-examples not included
+ft=ctr.tt(data = ex_rm,g.name ="Sp",var.name = "variable", ctr.name = "a0")
+head(ft)
+
+ggplot(ft, aes(x=variable, y=p,group=Comp.sp))+
+geom_line()+
+facet_wrap(.~Comp.sp, ncol = 1)
 }
