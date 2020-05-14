@@ -4,14 +4,14 @@
 \alias{ctr.tt}
 \title{Comparison of raman spectrum intensity with control}
 \usage{
-ctr.tt(data = data, g.name, var.name, ctr.name = "a0")
+ctr.tt(data = data, g.name = NULL, var.name = NULL, ctr.name = NULL)
 }
 \arguments{
 \item{g.name:}{group name of comparison target}
 
 \item{var.name:}{variable name (Raman shift)}
 
-\item{ctr.name:}{control sp in group}
+\item{ctr.name:}{control sp in group/ control species can be selected more than two}
 }
 \value{
 statiscal comparison of raman intensity distributionby raman shift
@@ -20,8 +20,7 @@ statiscal comparison of raman intensity distributionby raman shift
 Compare intensity between sample and control according to raman shift
 }
 \examples{
-ft=ctr.tt(data = ex_rm,g.name ="Sp",var.name = "variable", ctr.name = "a0")
-head(ft)
+ft=ctr.tt(data = ex_rm,g.name ="Sp",var.name = "variable", ctr.name = c("a0","a12"))
 
 ggplot(ft, aes(x=variable, y=p,group=Comp.sp))+
 geom_line()+
