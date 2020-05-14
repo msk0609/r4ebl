@@ -10,11 +10,11 @@
 #
 #'@export
 ctr.tt <- function(data=data, g.name,var.name, ctr.name="a0"){
-  if(!require(tidyverse)){
-    print("Need to install package:tidyverse")
 
-    break
+  if (!requireNamespace("tidyverse", quietly = TRUE)) {
+    stop("You need to install package tidyverse to use this function")
   }
+
   grp=as.vector(unique(data %>% select(g.name)))
   var=as.vector(unique(data %>% select(var.name)))
   d=data.frame()
