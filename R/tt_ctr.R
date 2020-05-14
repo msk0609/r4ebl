@@ -14,6 +14,7 @@
 #
 #'@export
 ctr.tt <- function(data=data, g.name=NULL,var.name=NULL, ctr.name=NULL){
+  print("this fuction must load package:dplyr  ")
   if (!requireNamespace("tidyverse", quietly = TRUE)) {
     stop("You need to install package tidyverse to use this function")
   }
@@ -35,6 +36,6 @@ ctr.tt <- function(data=data, g.name=NULL,var.name=NULL, ctr.name=NULL){
     }
   }
   d=d %>% `colnames<-`(c("Ctr.sp","Comp.sp","variable","statistic","stderr","p"))
-  d=subset(d,d[,2]!=ctr.name) %>% droplevels()
+  d=filter(d, !d[,2] %in% ctr.name)
   return(d)
 }
