@@ -36,6 +36,6 @@ ctr.tt <- function(data=data, g.name=NULL,var.name=NULL, ctr.name=NULL){
     }
   }
   d=d %>% `colnames<-`(c("Ctr.sp","Comp.sp","variable","statistic","stderr","p"))
-  d=filter(d, !d[,2] %in% ctr.name)
+  d=filter(d, !d[,2] %in% ctr.name) %>% droplevels()
   return(d)
 }
