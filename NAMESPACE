@@ -3,3 +3,4 @@
 export(anova_stat)
 export(ctr.tt)
 export(mom_gamma)
+export(peak_detect)
